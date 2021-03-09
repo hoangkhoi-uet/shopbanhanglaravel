@@ -52,14 +52,15 @@
             </tr>
           </thead>
           <tbody>
+              
             @foreach ($all_product as $key => $pro)
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
               <td>{{ $pro->product_name }}</td>
               <td>{{ $pro->product_price }}</td>
               <td><img src="public/uploads/product/{{ $pro->product_image }}" height="100px" width="100px"></td>
-              <td>{{ $pro->category_id }}</td>
-              <td>{{ $pro->brand_id }}</td>
+              <td>{{ $pro->category_name }}</td>
+              <td>{{ $pro->brand_name }}</td>
 
               
               <td><span class="text-ellipsis">
