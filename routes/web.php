@@ -118,9 +118,15 @@ Route::post('/add-customer', [CheckoutController::class, 'add_customer']); //Cus
 
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 
-Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::post('/save-checkout-customer', [CheckoutController::class, 'save_checkout_customer']); //Tao tai khoan moi
 
-Route::post('/save-checkout-customer', [CheckoutController::class, 'save_checkout_customer']); 
+Route::get('/payment', [CheckoutController::class, 'payment']); //Chon hinh thuc thanh toan
 
-Route::get('/payment', [CheckoutController::class, 'payment']);
+Route::post('/order-place', [CheckoutController::class, 'order_place']); //Dat hang
+
+
+//Order
+Route::get('/manager-order', [CheckoutController::class, 'manager_order']); 
+
+Route::get('/view-order/{order_id}', [CheckoutController::class, 'view_order']); 
 

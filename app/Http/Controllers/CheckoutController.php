@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Cart;
 use DB;
 use Session;
 use App\Http\Requests;
@@ -57,7 +58,11 @@ class CheckoutController extends Controller
     }
 
     public function payment() {
-
+        $cate_product = DB::table('tbl_category_product')->where('category_status', 1)->orderby('category_id', 'desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status', 1)->orderby('brand_id', 'desc')->get();
+ 
+        return view('pages.checkout.payment')
+        ->with('category', $cate_product)->with('brand', $brand_product);
     }
 
     public function logout_checkout() {
@@ -77,5 +82,96 @@ class CheckoutController extends Controller
         } else {
             return Redirect::to('/login-checkout');
         }
+    }
+
+    public function order_place(Request $request) {
+        $cate_product = DB::table('tbl_category_product')->where('category_status', 1)->orderby('category_id', 'desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status', 1)->orderby('brand_id', 'desc')->get();
+
+
+        $payment_data = array();
+        $payment_data['payment_method'] = $request->payment_option;
+        $payment_data['payment_status'] = 'Chờ xác nhận';
+        $payment_id = DB::table('tbl_payment')->insertGetId($payment_data);
+
+
+        $order_data = array();
+        $order_data['customer_id'] = Session::get('customer_id');
+        $order_data['shipping_id'] = Session::get('shipping_id');
+        $order_data['payment_id'] = $payment_id;
+        $order_data['order_total'] = Cart::total();
+        $order_data['order_status'] = 'Chờ xác nhận';
+        $order_id = DB::table('tbl_order')->insertGetId($order_data);
+
+
+        $content = Cart::content();
+        foreach($content as $v_content) {
+            $orderdetails_data = array();
+            $orderdetails_data['order_id'] = $order_id;
+            $orderdetails_data['product_id'] = $v_content->id;
+            $orderdetails_data['product_name'] = $v_content->name;
+            $orderdetails_data['product_price'] = $v_content->price;
+            $orderdetails_data['product_sales_quantity'] = $v_content->qty;
+            $orderdetails_id = DB::table('tbl_order_details')->insertGetId($orderdetails_data);
+        }
+        
+
+        if($payment_data['payment_method']==1) {
+            echo 'Thanh toán bằng ATM';
+        } elseif($payment_data['payment_method']==2) {
+            Cart::destroy();
+            return view('pages.checkout.cash_on_delivery')->with('category', $cate_product)->with('brand', $brand_product);
+        } else {
+            echo 'Thanh toán paypal';
+        }
+
+    }
+
+    //Simple Authen Login
+    public function AuthLogin() {
+        $admin_id = Session::get('admin_id');
+        if($admin_id) {
+            return Redirect::to('dashboard');
+        } else {
+            return Redirect::to('admin')->send();
+        }
+    }
+
+    public function manager_order() {
+        $this->AuthLogin();
+
+        $all_order = DB::table('tbl_order')
+            ->join('tbl_customer', 'tbl_order.customer_id', '=', 'tbl_customer.customer_id')
+            ->select('tbl_order.*', 'tbl_customer.customer_name')
+            ->orderby('tbl_order.order_id', 'desc')->get();
+
+        $manager_order = view('admin.manager_order')->with('all_order', $all_order);
+        return view('admin_layout')->with('admin.manager_order', $manager_order);
+    }
+
+
+    public function view_order($order_id) {
+        $this->AuthLogin();
+
+        $order_by_id = DB::table('tbl_order')
+            ->join('tbl_customer', 'tbl_order.customer_id', '=', 'tbl_customer.customer_id')
+            ->join('tbl_shipping', 'tbl_order.shipping_id', '=', 'tbl_shipping.shipping_id')
+            ->join('tbl_order_details', 'tbl_order.order_id', '=', 'tbl_order_details.order_id')
+
+            // ->select('tbl_order.*', 'tbl_customer.*', 'tbl_shipping.*', 'tbl_order_details.*')
+            ->get();
+
+
+        // echo "<pre>";
+        // print_r($order_by_id);
+        // echo "</pre>";
+
+
+        // $manager_order_by_id = view('admin.view_order')->with('order_by_id', $order_by_id);
+        // return view('admin_layout')->with('admin.manager_order', $manager_order_by_id);
+
+
+
+        return view('admin.view_order')->with('order_by_id', $order_by_id);
     }
 }

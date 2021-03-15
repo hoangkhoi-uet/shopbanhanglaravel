@@ -145,9 +145,9 @@
                             $customer_id = Session::get('customer_id');	
                         ?>
                         @if ($customer_id)
-                            <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Thanh toán</a>
+                            <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Giao hàng</a>
                         @else
-                            <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Thanh toán</a>
+                            <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Giao hàng</a>
                         @endif
                 </div>
             </div>

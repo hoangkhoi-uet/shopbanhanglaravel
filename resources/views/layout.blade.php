@@ -27,6 +27,10 @@
 	<!--/head-->
 
 	<body>
+		<?php
+			$customer_id = Session::get('customer_id');			
+			$shipping_id = Session::get('shipping_id');
+		?>
 		<header id="header">
 			<!--header-->
 			<div class="header_top">
@@ -96,15 +100,15 @@
 								<ul class="nav navbar-nav">
 									{{-- <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài khoản</a></li> --}}
 									<li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
-									<?php
-										$customer_id = Session::get('customer_id');	
-									?>
-									@if ($customer_id)
+									@if ($customer_id && $shipping_id == NULL)	
 										<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+									@elseif($customer_id && $shipping_id)
+										<li><a href="{{URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
 									@else
 										<li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
 									@endif
 
+									
 									<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
 									
 									@if ($customer_id)

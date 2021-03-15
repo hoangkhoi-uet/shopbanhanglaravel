@@ -6,7 +6,7 @@
         <div class="breadcrumbs">
             <ol class="breadcrumb">
               <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-              <li class="active">Thanh toán giỏ hàng</li>
+              <li class="active">Thông tin nhận hàng</li>
             </ol>
         </div><!--/breadcrums-->
 
@@ -107,9 +107,9 @@
                 </div>					 --}}
             </div>
         </div>
-        <div class="review-payment">
+        {{-- <div class="review-payment">
             <h2>Xem lại giỏ hàng</h2>
-        </div>
+        </div> --}}
 
         {{-- <div class="table-responsive cart_info">
             <table class="table table-condensed">
@@ -226,9 +226,9 @@
                 </tbody>
             </table>
         </div> --}}
-        <div class="payment-options">
-                <span>
-                    <label><input type="checkbox"> Direct Bank Transfer</label>
+        {{-- <div class="payment-options">
+            <span>
+                        <label><input type="checkbox"> Direct Bank Transfer</label>
                 </span>
                 <span>
                     <label><input type="checkbox"> Check Payment</label>
@@ -236,7 +236,7 @@
                 <span>
                     <label><input type="checkbox"> Paypal</label>
                 </span>
-            </div>
+        </div> --}}
     </div>
 </section> <!--/#cart_items-->
 
