@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 
 /*
@@ -23,10 +25,15 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/trang-chu', [HomeController::class, 'index']);
 
+Route::post('/tim-kiem', [HomeController::class, 'search']);
+
+
 //
 Route::get('/danh-muc-san-pham/{category_id}', [CategoryProduct::class, 'show_category_home']);
 
 Route::get('/thuong-hieu-san-pham/{brand_id}', [BrandProduct::class, 'show_brand_home']);
+
+Route::get('/chi-tiet-san-pham/{product_id}', [ProductController::class, 'details_product']);
 
 
 //Backend
@@ -89,3 +96,31 @@ Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_produc
 Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
 
 Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
+
+//Cart
+Route::post('/save-cart', [CartController::class, 'save_cart']);
+
+Route::get('/show-cart', [CartController::class, 'show_cart']);
+
+Route::get('/delete-from-cart/{rowId}', [CartController::class, 'delete_from_cart']);
+
+Route::post('/update-quantity', [CartController::class, 'update_quantity']);
+
+//Checkout
+Route::get('/login-checkout', [CheckoutController::class, 'login_checkout']);
+
+Route::post('/login-customer', [CheckoutController::class, 'login_customer']); 
+
+Route::get('/logout-checkout', [CheckoutController::class, 'logout_checkout']);
+
+
+Route::post('/add-customer', [CheckoutController::class, 'add_customer']); //Customer
+
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
+
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
+
+Route::post('/save-checkout-customer', [CheckoutController::class, 'save_checkout_customer']); 
+
+Route::get('/payment', [CheckoutController::class, 'payment']);
+

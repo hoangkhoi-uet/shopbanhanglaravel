@@ -63,7 +63,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="logo pull-left">
-								<a href="index.html"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
+								<a href="{{URL::to('/')}}"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
 							</div>
 							<div class="btn-group pull-right">
 								<div class="btn-group">
@@ -94,11 +94,24 @@
 						<div class="col-sm-8">
 							<div class="shop-menu pull-right">
 								<ul class="nav navbar-nav">
-									<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-									<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-									<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-									<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+									{{-- <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài khoản</a></li> --}}
+									<li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
+									<?php
+										$customer_id = Session::get('customer_id');	
+									?>
+									@if ($customer_id)
+										<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+									@else
+										<li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+									@endif
+
+									<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+									
+									@if ($customer_id)
+										<li><a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
+									@else
+										<li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+									@endif
 								</ul>
 							</div>
 						</div>
@@ -111,7 +124,7 @@
 				<!--header-bottom-->
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-9">
+						<div class="col-sm-7">
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle" data-toggle="collapse"
 									data-target=".navbar-collapse">
@@ -138,15 +151,19 @@
 											<li><a href="blog.html">Blog List</a></li>
 										</ul>
 									</li>
-									<li><a href="404.html">Giỏ hàng</a></li>
+									<li><a href="{{URL::to('/show-cart')}}">Giỏ hàng</a></li>
 									<li><a href="contact-us.html">Liên hệ</a></li>
 								</ul>
 							</div>
 						</div>
-						<div class="col-sm-3">
-							<div class="search_box pull-right">
-								<input type="text" placeholder="Search" />
-							</div>
+						<div class="col-sm-5">
+							<form action="{{URL::to('/tim-kiem')}}" method="post">
+								{{ csrf_field() }}
+								<div class="search_box pull-right">
+									<input type="text" name="keyword_submit" placeholder="Tìm kiếm sản phẩm" />
+									<input type="submit" style="margin-top:0px; color:black" name="search_item" class="btn btn-primary btn-sm" value="Tìm kiếm" />
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -177,7 +194,7 @@
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="https://cf.shopee.vn/file/807084e5cecf1550d9dad16de06e673a" class="girl img-responsive"
+										<img src="https://m.maihoang.com.vn/thumb/crop/10009" class="girl img-responsive"
 											alt="" />
 										<img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
 									</div>
@@ -191,7 +208,7 @@
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="https://cf.shopee.vn/file/807084e5cecf1550d9dad16de06e673a" class="girl img-responsive"
+										<img src="https://m.maihoang.com.vn/thumb/crop/10009" class="girl img-responsive"
 											alt="" />
 										<img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
 									</div>
@@ -206,7 +223,7 @@
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
-										<img src="https://cf.shopee.vn/file/807084e5cecf1550d9dad16de06e673a" class="girl img-responsive"
+										<img src="https://m.maihoang.com.vn/thumb/crop/10009" class="girl img-responsive"
 											alt="" />
 										<img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
 									</div>

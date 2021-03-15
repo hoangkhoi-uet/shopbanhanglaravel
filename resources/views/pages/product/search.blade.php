@@ -3,9 +3,9 @@
 
 <div class="features_items">
     <!--features_items-->
-    <h2 class="title text-center">{{$category_n[0]->category_name}}</h2>
-    @foreach ($category_by_id as $key => $pro)
-    <a href="{{ URL::to('/chi-tiet-san-pham/'.$pro->product_id) }}">
+    <h2 class="title text-center">Tìm kiếm</h2>
+    @foreach ($search_product as $key => $pro)
+
     <div class="col-sm-4">
         <div class="product-image-wrapper">
             <div class="single-products">
@@ -15,6 +15,7 @@
                     <p>{{$pro->product_name}}</p>
                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                 </div>
+
             </div>
             <div class="choose">
                 <ul class="nav nav-pills nav-justified">
@@ -24,12 +25,11 @@
             </div>
         </div>
     </div>
-    </a>
-    @endforeach
 
+    @endforeach
 
 
 </div>
 
+
 @endsection
-{{-- style="height: 100px; width:100px" --}}
