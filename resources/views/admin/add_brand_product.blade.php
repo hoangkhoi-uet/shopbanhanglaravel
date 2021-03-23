@@ -18,12 +18,12 @@
                         <form action="{{URL::to('/save-brand-product')}}" method="post" role="form">
                             {{ csrf_field() }}
                             <div class="form-group">
-                            <label for="exampleInputEmail1">Tên thương hiệu</label>
-                            <input type="text" name="brand_product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
+                            <label for="">Tên thương hiệu</label>
+                            <input type="text" name="brand_product_name" class="form-control" id="" placeholder="Tên danh mục" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả thương hiệu</label>
-                            <textarea type="text" style="resize: none" name="brand_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
+                            <textarea type="text" style="resize: none" name="brand_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Hiển thị</label>

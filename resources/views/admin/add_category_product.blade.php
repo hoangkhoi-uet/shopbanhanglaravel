@@ -18,15 +18,15 @@
                         <form action="{{URL::to('/save-category-product')}}" method="post" role="form">
                             {{ csrf_field() }}
                             <div class="form-group">
-                            <label for="exampleInputEmail1">Tên danh mục</label>
-                            <input type="text" name="category_product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
+                            <label for="">Tên danh mục</label>
+                            <input type="text" name="category_product_name" class="form-control" id="" placeholder="Tên danh mục" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả danh mục</label>
-                            <textarea type="text" style="resize: none" name="category_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
+                            <label for="">Mô tả danh mục</label>
+                            <textarea type="text" style="resize: none" name="category_product_desc" class="form-control" id="" placeholder="Mô tả danh mục" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Hiển thị</label>
+                            <label for="">Hiển thị</label>
                             <select name="category_product_status" class="form-control input-lg m-bot15">
                                 <option value="0">Ẩn</option>
                                 <option value="1">Hiển thị</option>

@@ -3,7 +3,7 @@
 
 <div class="features_items">
     <!--features_items-->
-    <h2 class="title text-center">{{$brand_n[0]->brand_name}}</h2>
+    <h2 class="title text-center">{{$brand_n->brand_name}}</h2>
     @foreach ($brand_by_id as $key => $pro)
     <a href="{{ URL::to('/chi-tiet-san-pham/'.$pro->product_id) }}">
     <div class="col-sm-4">

@@ -14,9 +14,9 @@
               <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                      <a href=""><img src="{{URL::to('public/frontend/images/similar1.jpg')}}" alt=""></a>
-                      <a href=""><img src="{{URL::to('public/frontend/images/similar2.jpg')}}" alt=""></a>
-                      <a href=""><img src="{{URL::to('public/frontend/images/similar3.jpg')}}" alt=""></a>
+                      <a href=""><img style="width: 65px; height: auto" src="https://gamek.mediacdn.vn/zoom/220_160/133514250583805952/2021/2/7/2000-gaming-pc-build-featured-image-1024x768-16126965104021353307923.jpg" alt=""></a>
+                      <a href=""><img style="width: 65px; height: auto" src="https://gamek.mediacdn.vn/zoom/220_160/133514250583805952/2021/2/7/2000-gaming-pc-build-featured-image-1024x768-16126965104021353307923.jpg" alt=""></a>
+                      <a href=""><img style="width: 65px; height: auto"src="https://gamek.mediacdn.vn/zoom/220_160/133514250583805952/2021/2/7/2000-gaming-pc-build-featured-image-1024x768-16126965104021353307923.jpg" alt=""></a>
                     </div>
 
                     
@@ -72,7 +72,7 @@
     </div>
     <div class="tab-content">
         <div class="tab-pane fade active in" id="details" >
-            <div class="col-sm-3">
+            {{-- <div class="col-sm-3">
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
@@ -83,7 +83,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+            <p><b>Nội dung:</b> {{ $pro->product_content }}</p>
 
         </div>
         

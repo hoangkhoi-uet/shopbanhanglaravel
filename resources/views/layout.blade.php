@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Home | E-Shopper</title>
+		<title>Linh kiện máy tính</title>
 		<link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
 		<link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
 		<link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -70,7 +70,7 @@
 								<a href="{{URL::to('/')}}"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
 							</div>
 							<div class="btn-group pull-right">
-								<div class="btn-group">
+								{{-- <div class="btn-group">
 									<button type="button" class="btn btn-default dropdown-toggle usa"
 										data-toggle="dropdown">
 										USA
@@ -92,7 +92,7 @@
 										<li><a href="#">Canadian Dollar</a></li>
 										<li><a href="#">Pound</a></li>
 									</ul>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 						<div class="col-sm-8">
@@ -191,10 +191,10 @@
 							<div class="carousel-inner">
 								<div class="item active">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
+										<h1><span>ONLINE</span>-SHOPPING</h1>
 										<h2>Free E-Commerce Template</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p>Find your PC
+											Fast Order. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
@@ -205,10 +205,10 @@
 								</div>
 								<div class="item">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
-										<h2>100% Responsive Design</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. </p>
+										<h1><span>ONLINE</span>-SHOPPING</h1>
+										<h2>Free E-Commerce Template</h2>
+										<p>Find your PC
+											Fast Order. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">
@@ -220,10 +220,10 @@
 
 								<div class="item">
 									<div class="col-sm-6">
-										<h1><span>E</span>-SHOPPER</h1>
-										<h2>Free Ecommerce Template</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. </p>
+										<h1><span>ONLINE</span>-SHOPPING</h1>
+										<h2>Free E-Commerce Template</h2>
+										<p>Find your PC
+											Fast Order. </p>
 										<button type="button" class="btn btn-default get">Get it now</button>
 									</div>
 									<div class="col-sm-6">

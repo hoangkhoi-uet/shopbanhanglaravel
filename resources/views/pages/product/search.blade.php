@@ -5,7 +5,7 @@
     <!--features_items-->
     <h2 class="title text-center">Tìm kiếm</h2>
     @foreach ($search_product as $key => $pro)
-
+    <a href="{{ URL::to('/chi-tiet-san-pham/'.$pro->product_id) }}">
     <div class="col-sm-4">
         <div class="product-image-wrapper">
             <div class="single-products">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-
+    </a>
     @endforeach
 
 

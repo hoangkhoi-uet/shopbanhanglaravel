@@ -18,27 +18,27 @@
                     <form action="{{URL::to('/save-product')}}" method="post" role="form" enctype="multipart/form-data">
                             {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
+                            <label for="">Tên sản phẩm</label>
+                            <input type="text" name="product_name" class="form-control" id="" placeholder="Tên danh mục" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
-                            <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
+                            <label for="">Hình ảnh sản phẩm</label>
+                            <input type="file" name="product_image" class="form-control" id="" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Giá sản phẩm</label>
-                            <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Giá sản phẩm">
+                            <label for="">Giá sản phẩm</label>
+                            <input type="text" name="product_price" class="form-control" id="" placeholder="Giá sản phẩm" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                            <textarea type="text" style="resize: none" name="product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm"></textarea>
+                            <label for="">Mô tả sản phẩm</label>
+                            <textarea type="text" style="resize: none" name="product_desc" class="form-control" id="" placeholder="Mô tả sản phẩm" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Nội dung sản phẩm</label>
-                            <textarea type="text" style="resize: none" name="product_content" class="form-control" id="exampleInputPassword1" placeholder="Nội dung sản phẩm"></textarea>
+                            <label for="">Nội dung sản phẩm</label>
+                            <textarea type="text" style="resize: none" name="product_content" class="form-control" id="" placeholder="Nội dung sản phẩm" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Danh mục sản phẩm</label>
+                            <label>Danh mục sản phẩm</label>
                             <select name="product_cate" class="form-control input-lg m-bot15">
                                 @foreach ($cate_product as $key => $cate)
                                     <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
@@ -46,7 +46,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Thương hiệu</label>
+                            <label for="">Thương hiệu</label>
                             <select name="product_brand" class="form-control input-lg m-bot15">
                                 @foreach ($brand_product as $key => $brand)
                                 <option value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
@@ -54,7 +54,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Hiển thị</label>
+                            <label for="">Hiển thị</label>
                             <select name="product_status" class="form-control input-lg m-bot15">
                                 <option value="0">Ẩn</option>
                                 <option value="1">Hiển thị</option>

@@ -20,19 +20,19 @@
                         enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="product_name" class="form-control" id="exampleInputEmail1"
+                            <label for="">Tên sản phẩm</label>
+                            <input type="text" name="product_name" class="form-control" id=""
                                 placeholder="Tên danh mục" value="{{ $pro->product_name }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
-                            <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
+                            <label for="">Hình ảnh sản phẩm</label>
+                            <input type="file" name="product_image" class="form-control" id="">
                             <img src="{{URL::to('public/uploads/product/'. $pro->product_image )}}" height="100px"
                                 width="100px">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Giá sản phẩm</label>
-                            <input type="text" name="product_price" class="form-control" id="exampleInputEmail1"
+                            <label for="">Giá sản phẩm</label>
+                            <input type="text" name="product_price" class="form-control" id=""
                                 placeholder="Giá sản phẩm" value="{{ $pro->product_price }}">
                         </div>
                         <div class="form-group">

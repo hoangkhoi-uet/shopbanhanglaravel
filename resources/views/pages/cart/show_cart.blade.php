@@ -31,7 +31,7 @@
                             <a href=""><img src="{{ URL::to('public/uploads/product/'.$v_content->options->image) }}" style="height: 100px" alt="" /></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">{{ $v_content->name }}</a></h4>
+                            <h4><a href="{{ URL::to('/chi-tiet-san-pham/'.$v_content->id) }}">{{ $v_content->name }}</a></h4>
                             <p>Web ID: 1089772</p>
                         </td>
                         <td class="cart_price">
