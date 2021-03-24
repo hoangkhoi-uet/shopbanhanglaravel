@@ -1,5 +1,12 @@
 @extends('admin_layout')
 @section('admin_content')
+{{-- <form action="{{URL::to('/send-mail')}}" method="post">
+    {{ csrf_field() }}
+    @foreach ($order_by_id as $data)
+        <input type="hidden" name="somedata[]" value="{{ $data }}">
+    @endforeach
+    <input type="submit" value="fdsafdaadgsffadsfsdafsad">
+</form> --}}
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -40,16 +47,20 @@
                 <thead>
                     <tr>
                         <th>Tên người nhận</th>
+                        <th>Lời nhắn</th>
                         <th>Địa chỉ nhận</th>
                         <th>Điện thoại</th>
+                        <th>Xác nhận đặt hàng</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>{{$order_by_id[0]->shipping_name}}</td>
+                        <td>{{$order_by_id[0]->shipping_note}}</td>
                         <td>{{$order_by_id[0]->shipping_address}}</td>
                         <td>{{$order_by_id[0]->shipping_phone}}</td>
+                        <td><a href="{{URL::to('/send-mail-confirm/'.$order_by_id[0]->order_id)}}"><i class="fa fa-check" aria-hidden="true"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -98,8 +109,8 @@
                         </th>
                         <th>Tên sản phẩm</th>
                         <th>Số lượng</th>
-                        <th>Giá</th>
-                        <th>Tổng đơn hàng</th>
+                        <th>Đơn giá</th>
+                        <th>Tổng tiền đơn hàng</th>
 
                         <th style="width:30px;"></th>
                     </tr>

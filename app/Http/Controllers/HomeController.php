@@ -58,7 +58,7 @@ class HomeController extends Controller
             Product: GT730 2GD5'
         ];
     
-        \Mail::to('truonggiangpctn@gmail.com')->send(new \App\Mail\MyMail($details));
+        \Mail::to('hoangkhoi0499@gmail.com')->send(new \App\Mail\MyMail($details));
     
         dd("Email is Sent.");
 

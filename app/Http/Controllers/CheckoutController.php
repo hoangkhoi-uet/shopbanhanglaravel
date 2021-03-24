@@ -157,7 +157,7 @@ class CheckoutController extends Controller
             ->join('tbl_customer', 'tbl_order.customer_id', '=', 'tbl_customer.customer_id')
             ->join('tbl_shipping', 'tbl_order.shipping_id', '=', 'tbl_shipping.shipping_id')
             ->join('tbl_order_details', 'tbl_order.order_id', '=', 'tbl_order_details.order_id')
-
+            ->where('tbl_order.order_id', $order_id)
             // ->select('tbl_order.*', 'tbl_customer.*', 'tbl_shipping.*', 'tbl_order_details.*')
             ->get();
 
@@ -173,5 +173,33 @@ class CheckoutController extends Controller
 
 
         return view('admin.view_order')->with('order_by_id', $order_by_id);
+    }
+    
+    public function send_mail_confirm($order_id) {
+        $order_by_id = DB::table('tbl_order')
+            ->join('tbl_customer', 'tbl_order.customer_id', '=', 'tbl_customer.customer_id')
+            ->join('tbl_shipping', 'tbl_order.shipping_id', '=', 'tbl_shipping.shipping_id')
+            ->join('tbl_order_details', 'tbl_order.order_id', '=', 'tbl_order_details.order_id')
+            ->where('tbl_order.order_id', $order_id)
+            // ->select('tbl_order.*', 'tbl_customer.*', 'tbl_shipping.*', 'tbl_order_details.*')
+            ->get();
+
+
+        $to_email = $order_by_id->shipping_email;
+        $details = $order_by_id;
+        \Mail::to($to_email)->send(new \App\Mail\MyMail($details));
+
+
+        return view('admin.view_order')->with('order_by_id', $order_by_id);
+
+    }
+
+    public function send_mail(Request $request) {
+        $data = array();
+        $data['customerName'] = $request->customerName;
+
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
     }
 }

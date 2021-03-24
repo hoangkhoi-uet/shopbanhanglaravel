@@ -31,6 +31,6 @@ class MyMail extends Mailable
     public function build()
     {
         return $this->subject('HK SHOP')
-                    ->view('emails.my_mail');
+                    ->view('emails.mail_confirm');
     }
 }

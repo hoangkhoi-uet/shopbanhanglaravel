@@ -27,7 +27,7 @@ Route::get('/trang-chu', [HomeController::class, 'index']);
 
 Route::post('/tim-kiem', [HomeController::class, 'search']);
 
-Route::get('/send-mail', [HomeController::class, 'send_mail']); //Mail
+// Route::get('/send-mail', [HomeController::class, 'send_mail']); //Mail
 
 
 //
@@ -132,3 +132,6 @@ Route::get('/manager-order', [CheckoutController::class, 'manager_order']);
 
 Route::get('/view-order/{order_id}', [CheckoutController::class, 'view_order']); 
 
+Route::get('/send-mail-confirm/{order_id}', [CheckoutController::class, 'send_mail_confirm']); 
+
+Route::post('/send-mail', [CheckoutController::class, 'send_mail']); 
