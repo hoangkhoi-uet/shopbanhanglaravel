@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Linh kiện máy tính</title>
+		<title>HK SHOP</title>
 		<link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
 		<link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
 		<link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -337,7 +337,7 @@
 					<div class="row">
 						<div class="col-sm-2">
 							<div class="companyinfo">
-								<h2><span>e</span>-shopper</h2>
+								<h2><span>hk</span>-shop</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 							</div>
 						</div>
@@ -482,7 +482,7 @@
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+						<p class="pull-left">Copyright © 2013 HK-SHOP Inc. All rights reserved.</p>
 						<p class="pull-right">Designed by <span><a target="_blank"
 									href="http://www.themeum.com">Themeum</a></span></p>
 					</div>

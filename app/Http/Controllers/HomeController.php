@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Mail;
 use DB;
 use Session;
 use App\Http\Requests;
@@ -36,6 +36,32 @@ class HomeController extends Controller
         return view('pages.product.search')
         ->with('category', $cate_product)->with('brand', $brand_product)
         ->with('search_product', $search_product);
+
+    }
+
+
+    public function send_mail() {
+        // $to_name = "SHOPEE";
+        // $to_email = "hkshop497@gmail.com";//send to this email
+
+        // $data = array("name"=>"Mail tu shopee", "body"=>"Testjsaigasdomjfa"); //body of mail.blade.php
+
+        // Mail::send('emails.my_mail', $data, function($message) use ($to_name,$to_email){
+        // $message->to($to_email)->subject("quen mat khua");
+        // $message->from($to_email,$to_name);//send from this mail
+        // });
+
+
+        $details = [
+            'title' => 'Mail from HK SHOP',
+            'body' => 'Your order id is: 14632
+            Product: GT730 2GD5'
+        ];
+    
+        \Mail::to('truonggiangpctn@gmail.com')->send(new \App\Mail\MyMail($details));
+    
+        dd("Email is Sent.");
+
 
     }
 

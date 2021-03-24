@@ -27,6 +27,8 @@ Route::get('/trang-chu', [HomeController::class, 'index']);
 
 Route::post('/tim-kiem', [HomeController::class, 'search']);
 
+Route::get('/send-mail', [HomeController::class, 'send_mail']); //Mail
+
 
 //
 Route::get('/danh-muc-san-pham/{category_id}', [CategoryProduct::class, 'show_category_home']);
