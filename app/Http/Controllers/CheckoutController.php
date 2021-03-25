@@ -185,12 +185,12 @@ class CheckoutController extends Controller
             ->get();
 
 
-        $to_email = $order_by_id->shipping_email;
+        $to_email = $order_by_id[0]->shipping_email;
         $details = $order_by_id;
         \Mail::to($to_email)->send(new \App\Mail\MyMail($details));
 
-
-        return view('admin.view_order')->with('order_by_id', $order_by_id);
+        return Redirect::to('/view-order/'.$order_id);
+        // return view('admin.view_order')->with('order_by_id', $order_by_id);
 
     }
 

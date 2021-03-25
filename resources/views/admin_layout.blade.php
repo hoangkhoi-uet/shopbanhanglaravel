@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<ul class="dropdown-menu extended logout">
 					<li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
 					<li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-					<li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Đăng xuất</a></li>
+					<li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Sign out!</a></li>
 				</ul>
 			</li>
 			<!-- user login dropdown end -->
@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li>
 						<a class="active" href="{{URL::to('/dashboard')}}">
 							<i class="fa fa-dashboard"></i>
-							<span>Tổng quan</span>
+							<span>Overview</span>
 						</a>
 					</li>
 
@@ -98,10 +98,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li class="sub-menu">
 						<a href="javascript:;">
 							<i class="fa fa-book"></i>
-							<span>Đơn hàng</span>
+							<span>Orders</span>
 						</a>
 						<ul class="sub">
-							<li><a href="{{URL::to('/manager-order')}}">Quản lý đơn hàng</a></li>
+							<li><a href="{{URL::to('/manager-order')}}">Order management</a></li>
 						</ul>
 					</li>
 
@@ -109,33 +109,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li class="sub-menu">
 						<a href="javascript:;">
 							<i class="fa fa-book"></i>
-							<span>Danh mục sản phẩm</span>
+							<span>Category Product</span>
 						</a>
 						<ul class="sub">
-							<li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
-							<li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>                    
+							<li><a href="{{URL::to('/add-category-product')}}">New Category</a></li>
+							<li><a href="{{URL::to('/all-category-product')}}">All Categorys</a></li>                    
 						</ul>
 					</li>
 
 					<li class="sub-menu">
 						<a href="javascript:;">
 							<i class="fa fa-book"></i>
-							<span>Thương hiệu sản phẩm</span>
+							<span>Brand Product</span>
 						</a>
 						<ul class="sub">
-							<li><a href="{{URL::to('/add-brand-product')}}">Thêm thương hiệu sản phẩm</a></li>
-							<li><a href="{{URL::to('/all-brand-product')}}">Liệt kê thương hiệu sản phẩm</a></li>                    
+							<li><a href="{{URL::to('/add-brand-product')}}">New Brand</a></li>
+							<li><a href="{{URL::to('/all-brand-product')}}">All Brands</a></li>                    
 						</ul>
 					</li>
 
 					<li class="sub-menu">
 						<a href="javascript:;">
 							<i class="fa fa-book"></i>
-							<span>Sản phẩm</span>
+							<span>Product</span>
 						</a>
 						<ul class="sub">
-							<li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
-							<li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>                    
+							<li><a href="{{URL::to('/add-product')}}">New Product</a></li>
+							<li><a href="{{URL::to('/all-product')}}">All Products</a></li>                    
 						</ul>
 					</li>
 

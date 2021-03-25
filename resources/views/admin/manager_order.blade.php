@@ -3,7 +3,7 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Liệt kê đơn hàng
+        List of orders
       </div>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
@@ -42,10 +42,10 @@
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>Tên người mua</th>
-              <th>Tổng giá tiền</th>
-              <th>Tình trạng</th>
-              <th>Hiển thị</th>
+              <th>Customer Name</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Activated</th>
 
               <th style="width:30px;"></th>
             </tr>
@@ -55,16 +55,16 @@
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
               <td>{{ $order->customer_name}}</td>
-              <td>{{ $order->order_total}}</td>
+              <td>{{ $order->order_total}} đ</td>
               <td>{{ $order->order_status}}</td>
 
 
               <td>
                 <a href="{{URL::to('/view-order/'.$order->order_id)}}" class="active styling-edit" ui-toggle-class="">
-                  <i class="fa fa-pencil-square-o text-success text-active"></i>
+                  <i class="fa fa-2x fa-pencil-square-o text-success text-active"></i>
                 </a>
                 <a onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng?')" href="{{URL::to('/delete-order/'.$order->order_id)}}" class="active styling-delete" ui-toggle-class="">
-                  <i class="fa fa-times text-danger text"></i>
+                  <i class="fa fa-2x fa-times text-danger text"></i>
                 </a>
               </td>
             </tr>

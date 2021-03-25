@@ -5,17 +5,16 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-                <li class="active">Thanh toán giỏ hàng</li>
+                <li><a href="{{URL::to('/')}}">Home</a></li>
+                <li class="active">Notification</li>
             </ol>
         </div>
         <!--/breadcrums-->
 
         <div class="review-payment">
-            <h2>Đặt hàng thành công.</h2>
+            <h1>Order Success. Please wait for confirmation to your email!</h1>
+            <a href="{{URL::to('/')}}">Back to Home</a>
         </div>
-
-
         
     </div>
 </section>

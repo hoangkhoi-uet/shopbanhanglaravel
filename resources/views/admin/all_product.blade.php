@@ -48,7 +48,7 @@
               <th>Category</th>
               <th>Brand</th>
               <th>Activated ?</th>
-              <th style="width:30px;"></th>
+              <th>Edit/Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -78,10 +78,10 @@
               </span></td>
               <td>
                 <a href="{{URL::to('/edit-product/'.$pro->product_id)}}" class="active styling-edit" ui-toggle-class="">
-                  <i class="fa fa-pencil-square-o text-success text-active"></i>
+                  <i class="fa fa-2x fa-pencil-square-o text-success text-active"></i>
                 </a>
                 <a onclick="return confirm('Bạn có chắc chắn muốn xóa?')" href="{{URL::to('/delete-product/'.$pro->product_id)}}" class="active styling-delete" ui-toggle-class="">
-                  <i class="fa fa-times text-danger text"></i>
+                  <i class="fa fa-2x fa-times text-danger text"></i>
                 </a>
               </td>
             </tr>

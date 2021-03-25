@@ -10,15 +10,15 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Thông tin khách hàng
+            Customer Information
         </div>
 
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th>Tên khách hàng</th>
-                        <th>Số điện thoại</th>
+                        <th>Customer Name</th>
+                        <th>Phone</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
@@ -40,17 +40,17 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Thông tin vận chuyển
+            Shipping information
         </div>
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th>Tên người nhận</th>
-                        <th>Lời nhắn</th>
-                        <th>Địa chỉ nhận</th>
-                        <th>Điện thoại</th>
-                        <th>Xác nhận đặt hàng</th>
+                        <th>Recipient's name</th>
+                        <th>Message</th>
+                        <th>Receiving address</th>
+                        <th>Phone</th>
+                        <th>Order confirmation</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
@@ -60,7 +60,7 @@
                         <td>{{$order_by_id[0]->shipping_note}}</td>
                         <td>{{$order_by_id[0]->shipping_address}}</td>
                         <td>{{$order_by_id[0]->shipping_phone}}</td>
-                        <td><a href="{{URL::to('/send-mail-confirm/'.$order_by_id[0]->order_id)}}"><i class="fa fa-check" aria-hidden="true"></i></a></td>
+                        <td><a href="{{URL::to('/send-mail-confirm/'.$order_by_id[0]->order_id)}}"><i class="fa fa-2x fa-check" aria-hidden="true"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -75,7 +75,7 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Chi tiết đơn hàng
+            Order details
         </div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
@@ -107,10 +107,10 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
-                        <th>Tên sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>Tổng tiền đơn hàng</th>
+                        <th>Products</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total order amount (tax included)</th>
 
                         <th style="width:30px;"></th>
                     </tr>
@@ -121,8 +121,8 @@
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                         <td>{{$v_content->product_name}}</td>
                         <td>{{$v_content->product_sales_quantity}}</td>
-                        <td>{{$v_content->product_price}}</td>
-                        <td>{{$v_content->order_total}}</td>
+                        <td>{{number_format($v_content->product_price)}} đ</td>
+                        <td>{{$v_content->order_total}} đ</td>
                         {{-- <td>{{$order_by_id->}}</td> --}}
                     </tr>
                     @endforeach

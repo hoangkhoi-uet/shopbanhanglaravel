@@ -3,7 +3,7 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Liệt kê thương hiệu sản phẩm
+        List of brand products
       </div>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
@@ -42,9 +42,9 @@
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>Tên thương hiệu</th>
-              <th>Hiển thị</th>
-              <th>Ngày thêm</th>
+              <th>Brand name</th>
+              <th>Activated</th>
+              <th>Edit/Delete</th>
               <th style="width:30px;"></th>
             </tr>
           </thead>
@@ -68,10 +68,10 @@
               </span></td>
               <td>
                 <a href="{{URL::to('/edit-brand-product/'.$brand_pro->brand_id)}}" class="active styling-edit" ui-toggle-class="">
-                  <i class="fa fa-pencil-square-o text-success text-active"></i>
+                  <i class="fa fa-2x fa-pencil-square-o text-success text-active"></i>
                 </a>
                 <a onclick="return confirm('Bạn có chắc chắn muốn xóa?')" href="{{URL::to('/delete-brand-product/'.$brand_pro->brand_id)}}" class="active styling-delete" ui-toggle-class="">
-                  <i class="fa fa-times text-danger text"></i>
+                  <i class="fa fa-2x fa-times text-danger text"></i>
                 </a>
               </td>
             </tr>

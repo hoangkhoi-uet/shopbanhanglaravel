@@ -5,8 +5,8 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-              <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-              <li class="active">Thông tin nhận hàng</li>
+              <li><a href="{{URL::to('/')}}">Home</a></li>
+              <li class="active">Receipt information</li>
             </ol>
         </div><!--/breadcrums-->
 
@@ -30,7 +30,7 @@
         </div><!--/checkout-options--> --}}
 
         <div class="register-req">
-            <p>Đăng nhập để thanh toán giỏ hàng</p>
+            <p>Check your login before checkout</p>
         </div><!--/register-req-->
 
         <div class="shopper-informations">
@@ -51,7 +51,7 @@
 
                 <div class="col-sm-12 clearfix">
                     <div class="bill-to">
-                        <p>Thông tin nhận hàng</p>
+                        <p>Receipt information</p>
                         <div class="form-one">
                             <form action="{{URL::to('/save-checkout-customer')}}" method="post">
                                 {{ csrf_field() }}

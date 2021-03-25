@@ -5,8 +5,8 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-              <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-              <li class="active">Giỏ hàng</li>
+              <li><a href="{{URL::to('/')}}">Home</a></li>
+              <li class="active">Cart</li>
             </ol>
         </div>
         <div class="table-responsive cart_info">
@@ -16,11 +16,11 @@
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
-                        <td class="image">Hình ảnh</td>
-                        <td class="description">Mô tả</td>
-                        <td class="price">Giá</td>
-                        <td class="quantity">số lượng</td>
-                        <td class="total">Tổng</td>
+                        <td class="image">Image</td>
+                        <td class="description">Description</td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
                         <td></td>
                     </tr>
                 </thead>
@@ -45,7 +45,7 @@
                                     <input class="cart_quantity_input" type="text" name="quantity" value="{{$v_content->qty}}" autocomplete="off" size="2">
                                     {{-- <a class="cart_quantity_down" href=""> - </a> --}}
                                     <input class="cart_quantity_input" type="hidden" name="rowId_cart" value="{{$v_content->rowId}}">
-                                    <input class="cart_quantity_input" type="submit" name="update_qty" value="Cập nhật">
+                                    <input class="cart_quantity_input" type="submit" name="update_qty" value="Update cart">
 
                                 </form>                            
                             </div>
@@ -135,19 +135,19 @@
             <div class="col-sm-6">
                 <div class="total_area">
                     <ul>
-                        <li>Tổng <span>{{Cart::subtotal()}} đ</span></li>
-                        <li>Thuế <span>{{Cart::tax()}} đ</span></li>
-                        <li>Phí vận chuyển <span>Free</span></li>
-                        <li>Thành tiền <span>{{Cart::total()}} đ</span></li>
+                        <li>Total <span>{{Cart::subtotal()}} đ</span></li>
+                        <li>Tax <span>{{Cart::tax()}} đ</span></li>
+                        <li>Shipping cost <span>Free</span></li>
+                        <li>Have to Pay <span>{{Cart::total()}} đ</span></li>
                     </ul>
                         {{-- <a class="btn btn-default update" href="">Update</a> --}}
                         <?php
                             $customer_id = Session::get('customer_id');	
                         ?>
                         @if ($customer_id)
-                            <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Giao hàng</a>
+                            <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Delivery</a>
                         @else
-                            <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Giao hàng</a>
+                            <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Delivery</a>
                         @endif
                 </div>
             </div>

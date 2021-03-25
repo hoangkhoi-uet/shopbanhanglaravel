@@ -3,7 +3,7 @@
 
 <div class="features_items">
     <!--features_items-->
-    <h2 class="title text-center">Sản phẩm mới nhất</h2>
+    <h2 class="title text-center">New Products</h2>
     @foreach ($all_product as $key => $pro)
     <a href="{{ URL::to('/chi-tiet-san-pham/'.$pro->product_id) }}">
     <div class="col-sm-4">
@@ -13,7 +13,7 @@
                     <img src="{{ URL::to('public/uploads/product/'.$pro->product_image) }}" alt="" />
                     <h2>{{number_format($pro->product_price)}} đ</h2>
                     <p>{{$pro->product_name}}</p>
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add To Cart</a>
                 </div>
                 {{-- <div class="product-overlay">
                     <div class="overlay-content">
@@ -26,8 +26,8 @@
             </div>
             <div class="choose">
                 <ul class="nav nav-pills nav-justified">
-                    <li><a href="#"><i class="fa fa-plus-square"></i>Thêm ưa thích</a></li>
-                    <li><a href="#"><i class="fa fa-plus-square"></i>Thêm so sánh</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add Favourites</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add Compare</a></li>
                 </ul>
             </div>
         </div>

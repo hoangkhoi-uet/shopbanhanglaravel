@@ -5,14 +5,14 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
-                <li class="active">Thanh toán giỏ hàng</li>
+                <li><a href="{{URL::to('/')}}">Home</a></li>
+                <li class="active">Checkout cart</li>
             </ol>
         </div>
         <!--/breadcrums-->
 
         <div class="review-payment">
-            <h2>Xem lại giỏ hàng</h2>
+            <h2>Your cart</h2>
         </div>
         <div class="table-responsive cart_info">
             <?php
@@ -21,11 +21,11 @@
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
-                        <td class="image">Hình ảnh</td>
-                        <td class="description">Mô tả</td>
-                        <td class="price">Giá</td>
-                        <td class="quantity">số lượng</td>
-                        <td class="total">Tổng</td>
+                        <td class="image">Image</td>
+                        <td class="description">Description</td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
                         <td></td>
                     </tr>
                 </thead>
@@ -53,7 +53,7 @@
                                     {{-- <a class="cart_quantity_down" href=""> - </a> --}}
                                     <input class="cart_quantity_input" type="hidden" name="rowId_cart"
                                         value="{{$v_content->rowId}}">
-                                    <input class="cart_quantity_input" type="submit" name="update_qty" value="Cập nhật">
+                                    <input class="cart_quantity_input" type="submit" name="update_qty" value="Update Cart">
 
                                 </form>
                             </div>
@@ -78,15 +78,15 @@
         <form action="{{URL::to('/order-place')}}" method="post">
             {{ csrf_field() }}
             <div class="payment-options">
-                <h3>Chọn hình thức thanh toán</h2>
+                <h3>Payment options</h2>
                     <span>
-                        <label><input name="payment_option" value="1" type="checkbox"> ATM nội địa</label>
+                        <label><input name="payment_option" value="1" type="checkbox"> ATM</label>
                     </span>
                     <span>
-                        <label><input name="payment_option" value="2" type="checkbox"> Nhận hàng trả tiền</label>
+                        <label><input name="payment_option" value="2" type="checkbox"> Cash on delivery</label>
                     </span>
                     <span>
-                        <label><input name="payment_option" value="3" type="checkbox"> Paypal</label>
+                        <label><input name="payment_option" value="3" type="checkbox"> Momo</label>
                     </span>
                     <input class="btn btn-primary" type="submit" name="send_order_place" value="Đặt hàng">
 
