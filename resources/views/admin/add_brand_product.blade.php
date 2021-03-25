@@ -4,7 +4,7 @@
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Thêm thương hiệu sản phẩm
+                    Add Brand Product
                 </header>
                 <div class="panel-body">
                     <?php
@@ -18,22 +18,22 @@
                         <form action="{{URL::to('/save-brand-product')}}" method="post" role="form">
                             {{ csrf_field() }}
                             <div class="form-group">
-                            <label for="">Tên thương hiệu</label>
-                            <input type="text" name="brand_product_name" class="form-control" id="" placeholder="Tên danh mục" required>
+                            <label for="">Brand Name</label>
+                            <input type="text" name="brand_product_name" class="form-control" id="" placeholder="Brand Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả thương hiệu</label>
+                            <label for="exampleInputPassword1">Brand Description</label>
                             <textarea type="text" style="resize: none" name="brand_product_desc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Hiển thị</label>
+                            <label for="exampleInputPassword1">Activated ?</label>
                             <select name="brand_product_status" class="form-control input-lg m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="0">Not Activate</option>
+                                <option value="1">Activate</option>
                             </select>
                         </div>
 
-                        <button type="submit" name="add_brand-product" class="btn btn-info">Thêm thương hiệu</button>
+                        <button type="submit" name="add_brand-product" class="btn btn-info">Add Brand</button>
                     </form>
                     </div>
 

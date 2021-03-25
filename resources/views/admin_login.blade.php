@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <head>
-<title>Trang quản lý Admin</title>
+<title>For salesman</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -29,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="log-w3">
 <div class="w3layouts-main">
-	<h2>Đăng nhập</h2>
+	<h2>Sign In Now</h2>
 	<?php
 		$message = Session::get('message');
 		if($message) {
@@ -41,12 +41,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			{{ csrf_field() }}
 			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
 			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-			<span><input type="checkbox" /> Nhớ đăng nhập</span>
-			<h6><a href="#">Quên mật khẩu?</a></h6>
+			<span><input type="checkbox" />Remember Me</span>
+			<h6><a href="#">Forgot Password?</a></h6>
 				<div class="clearfix"></div>
-				<input type="submit" value="Đăng nhập" name="login">
+				<input type="submit" value="Sign In" name="login">
 		</form>
-		{{-- <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p> --}}
+		<p>Login Facebook ?<a href="{{URL::to('/login-facebook')}}"><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a></p>
 </div>
 </div>
 <script src="{{asset('public/backend/js/bootstrap.js')}}"></script>

@@ -3,7 +3,7 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Liệt kê sản phẩm
+        All Product
       </div>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
@@ -42,12 +42,12 @@
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>Tên sản phẩm</th>
-              <th>Giá</th>
-              <th>Hình ảnh</th>
-              <th>Danh mục</th>
-              <th>Thương hiệu</th>
-              <th>Hiển thị</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Category</th>
+              <th>Brand</th>
+              <th>Activated ?</th>
               <th style="width:30px;"></th>
             </tr>
           </thead>

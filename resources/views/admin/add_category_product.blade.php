@@ -4,7 +4,7 @@
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Thêm danh mục sản phẩm
+                    New Category Product
                 </header>
                 <div class="panel-body">
                     <?php
@@ -18,22 +18,22 @@
                         <form action="{{URL::to('/save-category-product')}}" method="post" role="form">
                             {{ csrf_field() }}
                             <div class="form-group">
-                            <label for="">Tên danh mục</label>
+                            <label for="">Category Name</label>
                             <input type="text" name="category_product_name" class="form-control" id="" placeholder="Tên danh mục" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Mô tả danh mục</label>
+                            <label for="">Category Description</label>
                             <textarea type="text" style="resize: none" name="category_product_desc" class="form-control" id="" placeholder="Mô tả danh mục" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">Hiển thị</label>
+                            <label for="">Activated ?</label>
                             <select name="category_product_status" class="form-control input-lg m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="0">Not Activate</option>
+                                <option value="1">Activate</option>
                             </select>
                         </div>
 
-                        <button type="submit" name="add_category-product" class="btn btn-info">Thêm</button>
+                        <button type="submit" name="add_category-product" class="btn btn-info">Add Category Product</button>
                     </form>
                     </div>
 
