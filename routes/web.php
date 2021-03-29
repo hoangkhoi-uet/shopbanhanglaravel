@@ -134,7 +134,6 @@ Route::get('/view-order/{order_id}', [CheckoutController::class, 'view_order']);
 
 Route::get('/send-mail-confirm/{order_id}', [CheckoutController::class, 'send_mail_confirm']); 
 
-Route::post('/send-mail', [CheckoutController::class, 'send_mail']); 
 
 //Login facebook
 Route::get('/login-facebook', [AdminController::class, 'login_facebook']); 

@@ -117,6 +117,7 @@ class CheckoutController extends Controller
         
 
         if($payment_data['payment_method']==1) {
+            return view('pages.payment.vnpay_payment');
             echo 'Thanh toán bằng ATM';
         } elseif($payment_data['payment_method']==2) {
             Cart::destroy();
@@ -194,12 +195,5 @@ class CheckoutController extends Controller
 
     }
 
-    public function send_mail(Request $request) {
-        $data = array();
-        $data['customerName'] = $request->customerName;
 
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-    }
 }

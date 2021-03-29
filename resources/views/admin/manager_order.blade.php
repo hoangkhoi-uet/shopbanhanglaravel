@@ -61,7 +61,7 @@
 
               <td>
                 <a href="{{URL::to('/view-order/'.$order->order_id)}}" class="active styling-edit" ui-toggle-class="">
-                  <i class="fa fa-2x fa-pencil-square-o text-success text-active"></i>
+                  <i class="fa fa-2x fa-eye text-active"></i>
                 </a>
                 <a onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng?')" href="{{URL::to('/delete-order/'.$order->order_id)}}" class="active styling-delete" ui-toggle-class="">
                   <i class="fa fa-2x fa-times text-danger text"></i>

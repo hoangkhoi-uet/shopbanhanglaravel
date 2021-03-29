@@ -57,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- user login dropdown start-->
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-					<img alt="" src="{{('public/backend/images/2.png')}}">
+					<img alt="" src="{{asset('public/backend/images/2.png')}}">
 					<span class="username">
 						<?php
 						$name = Session::get('admin_name');

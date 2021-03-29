@@ -21,7 +21,7 @@
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
-                        <td class="image">Image</td>
+                        <td class="image">Product Image</td>
                         <td class="description">Description</td>
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
@@ -53,7 +53,7 @@
                                     {{-- <a class="cart_quantity_down" href=""> - </a> --}}
                                     <input class="cart_quantity_input" type="hidden" name="rowId_cart"
                                         value="{{$v_content->rowId}}">
-                                    <input class="cart_quantity_input" type="submit" name="update_qty" value="Update Cart">
+                                    {{-- <input class="cart_quantity_input" type="submit" name="update_qty" value="Update Cart"> --}}
 
                                 </form>
                             </div>
@@ -80,14 +80,14 @@
             <div class="payment-options">
                 <h3>Payment options</h2>
                     <span>
-                        <label><input name="payment_option" value="1" type="checkbox"> ATM</label>
+                        <label><input name="payment_option" value="1" type="checkbox"> VNPAY</label>
                     </span>
                     <span>
                         <label><input name="payment_option" value="2" type="checkbox"> Cash on delivery</label>
                     </span>
-                    <span>
+                    {{-- <span>
                         <label><input name="payment_option" value="3" type="checkbox"> Momo</label>
-                    </span>
+                    </span> --}}
                     <input class="btn btn-primary" type="submit" name="send_order_place" value="Đặt hàng">
 
             </div>

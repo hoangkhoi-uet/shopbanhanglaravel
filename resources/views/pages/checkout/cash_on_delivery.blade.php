@@ -12,7 +12,8 @@
         <!--/breadcrums-->
 
         <div class="review-payment">
-            <h1>Order Success. Please wait for confirmation to your email!</h1>
+            <h1>Order Success!</h1>
+            <h2>Please wait for confirmation to your email!</h2>
             <a href="{{URL::to('/')}}">Back to Home</a>
         </div>
         
